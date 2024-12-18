@@ -4,7 +4,12 @@ import "@/styles/customGlobals.css";
 // fonts
 import "@fontsource-variable/montserrat";
 
+import Metadata from "@/components/utils/Metadata.astro";
 import { ModeToggle } from "@/components/ui/theme-selector";
+type Props = {
+  title?: string;
+};
+const { title }: Props = Astro.props;
 ---
 
 <!doctype html>
@@ -12,9 +17,7 @@ import { ModeToggle } from "@/components/ui/theme-selector";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <Metadata {title} />
   </head>
   <body>
     <slot />

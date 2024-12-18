@@ -1,5 +1,8 @@
 {
-  "name": "",
+  "name": "bunestro",
+  "description": "Bunestro - Astro v5 template with Tailwind CSS and Bun",
+  "author": "Ard Astroid <ardastroid@gmail.com>",
+  "private": true,
   "type": "module",
   "version": "0.0.1",
   "scripts": {
