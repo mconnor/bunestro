@@ -5,12 +5,12 @@ import type { TSiteData, TtwitterMetaData, TMetadataIcons } from "@/types";
 export const siteData: TSiteData = {
     favicon: "/favicon.svg", // .svg / .ico / .png
     name: "Bunestro - Astro v5 Bun Starter",
-    shortName: "BUNEXT",
-    publisher: "bunextt.vercel.app",
-    baseUrl: "bunextt.vercel.app",
+    shortName: "Bunestro",
+    publisher: "bunestro.vercel.app",
+    baseUrl: "bunestro.vercel.app",
     description:
-        "BUNEXT is a Next.js 15 Bun Starter with Shadcn UI, Tailwind CSS, TypeScript, Zod, React Hook Form, React Email, Resend, and React Hot Toast.",
-    ogImage: { src: "/ogImage.webp", alt: "Bunestro", width: 1200, height: 630 },
+        "Bunestro is a astro v5 starter template with tailwindcss, shadcn and some other cool feature that runs on bun or node",
+    ogImage: { src: "/ogImage.png", alt: "Bunestro", width: 1200, height: 630 },
     metadata_color: {
         light: "#794af4",
         dark: "#794af4",
@@ -27,7 +27,6 @@ export const siteData: TSiteData = {
         "Shadcn UI",
         "TypeScript",
         "Zod",
-        "React Hook Form",
     ],
 
     robotsDefault: "index, follow", // { index: false, follow: false }
