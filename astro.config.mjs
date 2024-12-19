@@ -5,8 +5,10 @@ import react from "@astrojs/react";
 
 import tailwind from "@astrojs/tailwind";
 
-// https://astro.build/config
+// https://docs.astro.build/en/guides/environment-variables/#in-the-astro-config-file
 export default defineConfig({
+  site: "",
+
   integrations: [
     react(),
     tailwind({
