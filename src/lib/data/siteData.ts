@@ -12,8 +12,8 @@ export const siteData: TSiteData = {
         "BUNEXT is a Next.js 15 Bun Starter with Shadcn UI, Tailwind CSS, TypeScript, Zod, React Hook Form, React Email, Resend, and React Hot Toast.",
     ogImage: { src: "/ogImage.webp", alt: "Bunestro", width: 1200, height: 630 },
     metadata_color: {
-        light: "#1acfff",
-        dark: "#1acfff",
+        light: "#794af4",
+        dark: "#794af4",
     },
     author: {
         name: "darkidop",
