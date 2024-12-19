@@ -7,8 +7,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://docs.astro.build/en/guides/environment-variables/#in-the-astro-config-file
 export default defineConfig({
-  site: "",
-
+  site: "https://bunestro.vercel.app/",
   integrations: [
     react(),
     tailwind({
