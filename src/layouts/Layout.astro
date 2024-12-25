@@ -1,7 +1,7 @@
 ---
 import "@/styles/globals.css";
 import "@/styles/customGlobals.css";
-// fonts
+// custom fonts https://docs.astro.build/en/guides/fonts/
 import "@fontsource-variable/montserrat";
 
 import Metadata from "@/components/utils/Metadata.astro";
@@ -29,6 +29,7 @@ const { title }: Props = Astro.props;
   </body>
 </html>
 <script is:inline>
+  // for theme data
   const getThemePreference = () => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
       return localStorage.getItem("theme");
