@@ -44,7 +44,7 @@ export function ScrollToTopButton({
           <button
             onClick={scrollToTop}
             className={cn(
-              "p-2 rounded-full bg-primary text-primary-foreground shadow-lg transition-all duration-300 hover:bg-primary/90",
+              "p-2 rounded-xl bg-primary text-primary-foreground shadow-lg transition-all duration-300 hover:bg-primary/90  hover:-translate-y-1 hover:shadow-xl",
               isVisible
                 ? "translate-y-0 opacity-100"
                 : "translate-y-16 opacity-0 pointer-events-none",

@@ -13,6 +13,7 @@ const { title }: Props = Astro.props;
 // components
 import { ModeToggle } from "@/components/ui/theme-selector";
 import { ScrollToTopButton } from "@/components/utils/TopButton";
+import { Toaster } from "@/components/ui/toaster";
 ---
 
 <!doctype html>
@@ -23,13 +24,14 @@ import { ScrollToTopButton } from "@/components/utils/TopButton";
     <Metadata {title} />
   </head>
   <body>
-    <ScrollToTopButton client:load className="fixed bottom-12 right-4 z-[60]" />
+    <ScrollToTopButton client:load className="fixed bottom-4 right-4 z-50" />
     <slot />
     <ModeToggle
       client:load
-      className="fixed right-2 bottom-2 z-[60]"
+      className="fixed left-2 bottom-2 z-50"
       iconClassName="size-3"
     />
+    <Toaster client:load />
   </body>
 </html>
 <script is:inline>

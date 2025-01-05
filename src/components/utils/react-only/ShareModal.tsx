@@ -1,6 +1,7 @@
 "use client";
 // a share modal with qr, fb, twitter/x, linkedin
 import { ImageSkeleton } from "@/components/utils/react-only/ImageSkeleton";
+import { Image } from "@/components/utils/react-only/Image";
 import { Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getQrCode } from "@/lib/utils";
@@ -15,7 +16,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { toast } from "@/hooks/use-toast";
 import { Icons } from "@/components/utils/icons";
-// import { Img } from "@/components/utils/image";
 
 type ShareModalProps = React.ComponentProps<typeof Drawer> & {
   shareUrl: string;
@@ -137,11 +137,12 @@ export function ShareModal({
               {qrIcon ? (
                 <div className="size-64 md:size-52 ">{qrIcon}</div>
               ) : (
-                <ImageSkeleton
+                <Image
                   src={getQrCode(shareUrl)}
                   alt="a2e-qr"
-                  className="size-64 md:size-52 dark:invert"
-                  imgClassName="rounded-lg object-contain"
+                  className="size-64 md:size-52 dark:invert rounded-xl"
+                  width={256}
+                  height={256}
                 />
               )}
             </div>
