@@ -14,17 +14,24 @@ export function Test({ className }: TTest) {
         <Button className="mx-auto mt-12">Hello World</Button>
       </ShareModal>
 
-      <div className="flex flex-wrap gap-4 justify-center">
-        {Array.from({ length: 5 }).map((_, index) => (
+      <div className="flex flex-wrap gap-4 justify-center mb-20">
+        {Array.from({ length: 120 }).map((_, index) => (
           <Image
             key={index}
             src={`https://picsum.photos/800/600?random=${index}`}
             alt={`Random image ${index + 1}`}
-            width={200}
+            width={220}
             height={280}
             className="rounded-md"
           />
         ))}
+        <Image
+          src={`/ogImage.png`}
+          alt={`ig img`}
+          width={220}
+          height={280}
+          className="rounded-md"
+        />
       </div>
     </div>
   );
