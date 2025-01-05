@@ -73,23 +73,29 @@ const showAltText = width > 100 && height > 100;
 </style>
 
 <script>
-  // Add timeout for each image
-  document.querySelectorAll(".img_custom_lazy_loading").forEach((img) => {
-    const timeoutId = setTimeout(() => {
-      if (
-        !(img as HTMLImageElement).complete ||
-        (img as HTMLImageElement).naturalWidth === 0
-      ) {
-        const errorIcon = img.previousElementSibling;
-        const skeleton = errorIcon?.previousElementSibling;
-        if (errorIcon) {
-          (errorIcon as HTMLElement).style.display = "flex";
-          skeleton?.classList.add("pause-animation");
-        }
-      }
-    }, 10000);
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const img = entry.target as HTMLImageElement;
 
-    // Store timeoutId in a data attribute instead
-    img.setAttribute("data-timeout-id", timeoutId.toString());
+        const timeoutId = setTimeout(() => {
+          if (!img.complete || img.naturalWidth === 0) {
+            const errorIcon = img.previousElementSibling;
+            const skeleton = errorIcon?.previousElementSibling;
+            if (errorIcon) {
+              (errorIcon as HTMLElement).style.display = "flex";
+              skeleton?.classList.add("pause-animation");
+            }
+          }
+        }, 10000);
+
+        img.setAttribute("data-timeout-id", timeoutId.toString());
+        observer.unobserve(img);
+      }
+    });
+  });
+
+  document.querySelectorAll(".img_custom_lazy_loading").forEach((img) => {
+    observer.observe(img);
   });
 </script>
