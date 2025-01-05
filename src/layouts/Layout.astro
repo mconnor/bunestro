@@ -5,11 +5,14 @@ import "@/styles/customGlobals.css";
 import "@fontsource-variable/montserrat";
 
 import Metadata from "@/components/utils/Metadata.astro";
-import { ModeToggle } from "@/components/ui/theme-selector";
 type Props = {
   title?: string;
 };
 const { title }: Props = Astro.props;
+
+// components
+import { ModeToggle } from "@/components/ui/theme-selector";
+import { ScrollToTopButton } from "@/components/utils/TopButton";
 ---
 
 <!doctype html>
@@ -20,11 +23,12 @@ const { title }: Props = Astro.props;
     <Metadata {title} />
   </head>
   <body>
+    <ScrollToTopButton client:load className="fixed bottom-12 right-4 z-[60]" />
     <slot />
     <ModeToggle
       client:load
       className="fixed right-2 bottom-2 z-[60]"
-      iconClassName="size-4"
+      iconClassName="size-3"
     />
   </body>
 </html>

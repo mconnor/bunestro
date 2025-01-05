@@ -5,10 +5,29 @@ import defaultTheme from "tailwindcss/defaultTheme";
 import tailwindcssAnimate from "tailwindcss-animate";
 import tailwindcssMotion from "tailwindcss-motion";
 
+import { base } from "./src/styles/tailwind/base";
+import { utilities } from "./src/styles/tailwind/tailwindUtils";
+
 export default {
   darkMode: ["class"],
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: "1rem",
+        lg: "2rem",
+        xl: "3rem",
+        "2xl": "4rem",
+      },
+      screens: {
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1440px",
+      },
+    },
     extend: {
       borderRadius: {
         lg: "var(--radius)",
@@ -63,5 +82,5 @@ export default {
       },
     },
   },
-  plugins: [tailwindcssAnimate, tailwindcssMotion],
+  plugins: [utilities, base, tailwindcssAnimate, tailwindcssMotion],
 };

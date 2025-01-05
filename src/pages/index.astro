@@ -1,10 +1,51 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { Button } from "@/components/ui/button";
+import { ShareModal } from "@/components/utils/react-only/ShareModal";
+import { Test } from "@/components/Test";
 ---
 
 <Layout>
-  <main class="h-screen w-full grid place-items-center">
-    <Button className="">Hello World</Button>
+  <main class="w-full grid place-items-center">
+    <ShareModal shareUrl={"https://www.google.com"} client:load>
+      <Button className="">Hello World</Button>
+    </ShareModal>
+
+    <Test client:load />
+
+    <p class="text-center p-[40vw]">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia doloremque
+      fuga culpa dolores quae, provident nesciunt, ab asperiores suscipit
+      tempora officiis temporibus quidem pariatur enim. Natus in, fugiat quas
+      repellendus harum sed pariatur eos minus magni officia autem facere
+      laudantium animi possimus ad! Eveniet tempore hic eaque iure recusandae
+      sunt provident voluptatem dolorem quae sed amet, modi nam ea. Repellat
+      dolores a perferendis necessitatibus minus iure tempore maiores
+      exercitationem nisi, quae aut et fuga expedita nostrum aliquid atque. Vero
+      id cumque molestias, blanditiis autem quae perferendis mollitia dolorem,
+      inventore quia saepe voluptatum numquam earum. Consectetur omnis adipisci
+      fugit, ad provident earum nobis esse cum dolore recusandae minima, nemo
+      maxime explicabo iste dolorum facilis temporibus. Id voluptatibus, hic
+      voluptatem tempora quod distinctio similique illo aliquid ut illum? Est
+      odio necessitatibus, quae ipsum temporibus corrupti! Possimus quas totam
+      iusto dicta veniam cum repellendus, aut et a ducimus porro, odio, soluta
+      sequi? Inventore ea sit est soluta, deleniti pariatur sunt. Debitis
+      eligendi natus autem soluta nulla culpa illum eaque laborum quas
+      exercitationem mollitia reprehenderit praesentium eveniet eos pariatur
+      atque labore qui ab, ducimus, ea voluptas quia accusamus dolorem
+      distinctio. Et possimus esse, quae maxime, quaerat amet id tenetur ipsa
+      est doloremque debitis vel consectetur, recusandae ut eius illo quidem
+      iste laudantium suscipit laborum. Sed ipsa quod sit esse, deleniti
+      placeat, ad natus quasi libero velit possimus consequuntur, at aliquid!
+      Autem eius voluptatem dolor quasi ipsum maxime illum minus totam quisquam.
+      Quod voluptatem esse, pariatur voluptates magnam sapiente quo aliquam
+      facilis fugiat saepe repudiandae ipsa sit illum vel a consequuntur dolor
+      necessitatibus corrupti officiis eum at molestiae laborum natus magni.
+      Doloremque cupiditate culpa placeat officia sunt, explicabo accusantium!
+      Iste at voluptatem magnam, rerum neque pariatur nam, provident numquam
+      quisquam tempora ratione sit nostrum. Deleniti, tenetur? Repudiandae
+      delectus exercitationem maxime reprehenderit eligendi sapiente, minus
+      voluptatum.
+    </p>
   </main>
 </Layout>
