@@ -34,6 +34,7 @@ import { Toaster } from "@/components/ui/toaster";
     <Toaster client:load />
   </body>
 </html>
+
 <script is:inline>
   // for theme data
   const getThemePreference = () => {
@@ -57,6 +58,34 @@ import { Toaster } from "@/components/ui/toaster";
       attributeFilter: ["class"],
     });
   }
+
+  // lazy load images
+  // lazy load images with fade in effect
+  const lazyImages = document.querySelectorAll(".img_custom_lazy_loading");
+
+  const imageObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          // Start loading the image
+          if (img.dataset.src) {
+            img.src = img.dataset.src;
+          }
+          // Remove observer after loading
+          observer.unobserve(img);
+        }
+      });
+    },
+    {
+      // Start loading images when they are 50px from viewport
+      rootMargin: "50px",
+    }
+  );
+
+  lazyImages.forEach((img) => {
+    imageObserver.observe(img);
+  });
 </script>
 <style>
   html,
