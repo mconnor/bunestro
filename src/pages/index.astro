@@ -10,11 +10,11 @@ import Img from "@/components/utils/Img.astro";
   <main>
     <div class="flex flex-wrap gap-4 justify-center mb-4 p-6">
       {
-        Array.from({ length: 30 }).map((_, index) => (
+        Array.from({ length: 150 }).map((_, index) => (
           <Img
             src={`https://picsum.photos/800/600?random=${index}`}
             alt={`Random image ${index + 1}`}
-            width={300}
+            width={800}
             height={600}
           />
         ))
