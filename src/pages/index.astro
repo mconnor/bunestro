@@ -3,7 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import { Button } from "@/components/ui/button";
 
 import { Test } from "@/components/Test";
-import Img from "@/components/utils/Img2.astro";
+import Img from "@/components/utils/Img.astro";
 
 import img1 from "@/assets/img1.jpg";
 import img2 from "@/assets/img2.jpg";
@@ -15,12 +15,14 @@ import img3 from "@/assets/img3.jpg";
     <!-- <Button href="/test" className="mt-10 mx-auto block text-center w-fit">
       Test
     </Button> -->
-
+    <h1 class="text-center text-4xl font-bold my-10">
+      An responsive Image component for Astro
+    </h1>
     <div class="flex flex-wrap gap-4 justify-center mb-4 p-6">
       <Img
         src={img1}
         alt={`Random image 1`}
-        width={300}
+        width={350}
         height={500}
         className="rounded-md"
         useAstroImage={true}
@@ -28,7 +30,7 @@ import img3 from "@/assets/img3.jpg";
       <Img
         src={img2}
         alt={`Random image 2`}
-        width={300}
+        width={350}
         height={500}
         className="rounded-md"
         useAstroImage={true}
@@ -36,7 +38,7 @@ import img3 from "@/assets/img3.jpg";
       <Img
         src={img3}
         alt={`Random image 3`}
-        width={300}
+        width={350}
         height={500}
         className="rounded-md"
         useAstroImage={true}
