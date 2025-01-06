@@ -9,27 +9,27 @@ type TTest = {
 
 export function Test({ className }: TTest) {
   return (
-    <div className={cn("container flex flex-col gap-4", className)}>
-      <ShareModal shareUrl={"https://www.google.com"}>
-        <Button className="mx-auto mt-12">Hello World</Button>
-      </ShareModal>
+    <div className={cn("flex flex-col gap-4", className)}>
+      {/* <ShareModal shareUrl={"https://www.google.com"}>
+        <Button className="mx-auto mt-12">Share modal</Button>
+      </ShareModal> */}
 
-      <div className="flex flex-wrap gap-4 justify-center mb-20">
-        {Array.from({ length: 120 }).map((_, index) => (
+      <div className="flex flex-wrap gap-4 justify-center mb-4 p-6">
+        {Array.from({ length: 620 }).map((_, index) => (
           <Image
             key={index}
             src={`https://picsum.photos/800/600?random=${index}`}
             alt={`Random image ${index + 1}`}
-            width={220}
-            height={280}
+            width={300}
+            height={500}
             className="rounded-md"
           />
         ))}
         <Image
           src={`/ogImage.png`}
           alt={`ig img`}
-          width={220}
-          height={280}
+          width={300}
+          height={500}
           className="rounded-md"
         />
       </div>

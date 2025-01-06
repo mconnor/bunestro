@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useLazyLoad } from "@/hooks/useLazyLoad";
 import { cn } from "@/lib/utils";
-
+// lazy loads imgs with a placeholder on the client side
 // requires client:load directive to work,
 interface ResponsiveImageProps {
   src: string;
@@ -21,7 +21,9 @@ export function Image({
 }: ResponsiveImageProps) {
   const [imageRef, isInView] = useLazyLoad();
   const [isLoaded, setIsLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
   const aspectRatio = `${width} / ${height}`;
+  const showAltText = width > 100 && height > 100;
 
   return (
     <div
@@ -32,6 +34,17 @@ export function Image({
         maxWidth: `${width}px`,
       }}
     >
+      {/* fallback for users with JS disabled */}
+      <noscript>
+        <img
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        />
+      </noscript>
+
       {isInView ? (
         <img
           src={src}
@@ -40,14 +53,43 @@ export function Image({
           height={height}
           className={cn(
             "absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300",
-            isLoaded ? "opacity-100" : "opacity-0"
+            isLoaded && !hasError ? "opacity-100" : "opacity-0"
           )}
           onLoad={() => setIsLoaded(true)}
+          onError={() => setHasError(true)}
           loading="lazy"
         />
       ) : null}
       {!isLoaded && (
-        <Skeleton className="absolute top-0 left-0 w-full h-full rounded-none" />
+        <Skeleton
+          className={cn(
+            "absolute top-0 left-0 w-full h-full rounded-none",
+            hasError && "[animation-play-state:paused]"
+          )}
+        />
+      )}
+      {hasError && (
+        <div className="absolute inset-0 flex items-center justify-center text-red-600 flex-col">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            className="w-[30%] h-[30%] min-w-[30px] min-h-[30px] max-w-[40px] max-h-[40px]"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          {showAltText && (
+            <span className="mt-2 text-sm text-center px-2">{alt}</span>
+          )}
+        </div>
       )}
     </div>
   );

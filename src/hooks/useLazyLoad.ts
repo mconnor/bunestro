@@ -10,6 +10,9 @@ export function useLazyLoad() {
                 setIntersecting(true)
                 observer.unobserve(entry.target)
             }
+        }, {
+            // Start loading when element is 200px before entering viewport
+            rootMargin: '200px'
         })
 
         if (ref.current) {
@@ -25,4 +28,3 @@ export function useLazyLoad() {
 
     return [ref, isIntersecting] as const
 }
-

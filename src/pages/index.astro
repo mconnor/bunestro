@@ -1,15 +1,18 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { Button } from "@/components/ui/button";
-import { ShareModal } from "@/components/utils/react-only/ShareModal";
+
 import { Test } from "@/components/Test";
 import Img from "@/components/utils/Img.astro";
 ---
 
 <Layout>
   <main>
-    <a href="/test">Test</a>
-    <div class="flex flex-wrap gap-4 justify-center mb-4 p-6">
+    <Button href="/test" className="mt-10 mx-auto block text-center w-fit">
+      Test
+    </Button>
+
+    <!-- <div class="flex flex-wrap gap-4 justify-center mb-4 p-6">
       {
         Array.from({ length: 550 }).map((_, index) => (
           <Img
@@ -21,14 +24,7 @@ import Img from "@/components/utils/Img.astro";
           />
         ))
       }
-      <Img
-        src={`https://zenetxicesports.com/assets/team/heads/arefin.png`}
-        alt={`zeb`}
-        width={800}
-        height={600}
-        className="rounded-md"
-      />
-    </div>
-    <!-- <Test client:load /> -->
+    </div> -->
+    <Test client:load />
   </main>
 </Layout>

@@ -21,10 +21,13 @@ export function ScrollToTopButton({
 
   useEffect(() => {
     const toggleVisibility = () => {
-      // Check if page is scrolled more than 100vh
-      if (window.scrollY > window.innerHeight / 5) setIsVisible(true);
+      // Check if page is scrolled at all
+      if (window.scrollY > 0) setIsVisible(true);
       else setIsVisible(false);
     };
+
+    // Check visibility on mount
+    toggleVisibility();
 
     window.addEventListener("scroll", toggleVisibility);
     return () => window.removeEventListener("scroll", toggleVisibility);
@@ -46,8 +49,8 @@ export function ScrollToTopButton({
             className={cn(
               "p-2 rounded-xl bg-primary text-primary-foreground shadow-lg transition-all duration-300 hover:bg-primary/90  hover:-translate-y-1 hover:shadow-xl",
               isVisible
-                ? "translate-y-0 opacity-100"
-                : "translate-y-16 opacity-0 pointer-events-none",
+                ? "motion-scale-in-[0.24] motion-translate-x-in-[0%] motion-translate-y-in-[111%]"
+                : "motion-translate-y-out-[90%] motion-scale-out-[0] motion-opacity-out-[0%] pointer-events-none",
               className
             )}
             aria-label="Scroll to top"
@@ -55,8 +58,8 @@ export function ScrollToTopButton({
             <ArrowUp className={cn("size-4", iconClassName)} />
           </button>
         </TooltipTrigger>
-        <TooltipContent>
-          <p>Scroll to top</p>
+        <TooltipContent className="text-[12px]">
+          <p>Go to top</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
