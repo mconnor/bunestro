@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { ShareModal } from "@/components/utils/react-only/ShareModal";
 
 import Img from "@/components/utils/Img.astro";
-import { Image } from "astro:assets";
+// import { Image } from "astro:assets";
+import Image from "@/components/utils/Image.astro";
 ---
 
 <Layout>
@@ -12,7 +13,7 @@ import { Image } from "astro:assets";
     <Button href="/" className="mt-10 mx-auto block text-center w-fit">
       home
     </Button>
-    <!-- <div class="flex flex-wrap gap-4 justify-center mb-4 p-6">
+    <div class="flex flex-wrap gap-4 justify-center mb-4 p-6">
       {
         Array.from({ length: 550 }).map((_, index) => (
           <Img
@@ -24,8 +25,8 @@ import { Image } from "astro:assets";
           />
         ))
       }
-    </div> -->
-    <Image src="/ogImage.png" alt="ogImage" width={900} height={500} />
+    </div>
+    <!-- <Image src="/ogImage.png" alt="ogImage" width={900} height={500} /> -->
     <!-- <Test client:load /> -->
   </main>
 </Layout>

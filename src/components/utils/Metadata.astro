@@ -45,7 +45,7 @@ let siteTitle = title ? `${title} / ${siteData.name}` : siteData.name;
 <meta name="description" content={description || siteData.description} />
 <meta name="author" content={author?.name || siteData.author.name} />
 <link rel="author" href={author?.url || siteData.author.url} />
-<link rel="manifest" href=`${Astro.url}site.webmanifest` />
+<link rel="manifest" href="/site.webmanifest" />
 <meta name="keywords" content={keywords.join(", ")} />
 <meta name="creator" content={author?.name || siteData.author.name} />
 <meta name="publisher" content={siteData.publisher} />
