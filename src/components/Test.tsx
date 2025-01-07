@@ -9,10 +9,13 @@ type TTest = {
 
 export function Test({ className }: TTest) {
   return (
-    <div className={cn("flex flex-col gap-4", className)}>
-      {/* <ShareModal shareUrl={"https://www.google.com"}>
+    <section className={cn("flex flex-col gap-4", className)} id="test">
+      <h1 className="text-center text-4xl font-bold my-10">
+        Using react client side
+      </h1>
+      <ShareModal shareUrl={"https://www.google.com"}>
         <Button className="mx-auto mt-12">Share modal</Button>
-      </ShareModal> */}
+      </ShareModal>
 
       <div className="flex flex-wrap gap-4 justify-center mb-4 p-6">
         {Array.from({ length: 620 }).map((_, index) => (
@@ -33,6 +36,6 @@ export function Test({ className }: TTest) {
           className="rounded-md"
         />
       </div>
-    </div>
+    </section>
   );
 }

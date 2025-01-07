@@ -1,6 +1,5 @@
 "use client";
 // a share modal with qr, fb, twitter/x, linkedin
-import { ImageSkeleton } from "@/components/utils/react-only/ImageSkeleton";
 import { Image } from "@/components/utils/react-only/Image";
 import { Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";

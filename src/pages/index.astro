@@ -12,12 +12,12 @@ import img3 from "@/assets/img3.jpg";
 
 <Layout>
   <main>
-    <!-- <Button href="/test" className="mt-10 mx-auto block text-center w-fit">
-      Test
-    </Button> -->
     <h1 class="text-center text-4xl font-bold my-10">
       An responsive Image component for Astro
     </h1>
+    <Button href="#test" className="mt-10 mx-auto block text-center w-fit">
+      Using react
+    </Button>
     <div class="flex flex-wrap gap-4 justify-center mb-4 p-6">
       <Img
         src={img1}
@@ -44,6 +44,7 @@ import img3 from "@/assets/img3.jpg";
         useAstroImage={true}
       />
     </div>
+
     <div class="flex flex-wrap gap-4 justify-center mb-4 p-6">
       {
         Array.from({ length: 550 }).map((_, index) => (
@@ -57,6 +58,6 @@ import img3 from "@/assets/img3.jpg";
         ))
       }
     </div>
-    <!-- <Test client:load /> -->
+    <Test client:load />
   </main>
 </Layout>
