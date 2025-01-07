@@ -1,6 +1,6 @@
 "use client";
 // a share modal with qr, fb, twitter/x, linkedin
-import { Image } from "@/components/utils/react-only/Image";
+import { Img } from "@/components/utils/react-only/Image";
 import { Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getQrCode } from "@/lib/utils";
@@ -136,7 +136,7 @@ export function ShareModal({
               {qrIcon ? (
                 <div className="size-64 md:size-52 ">{qrIcon}</div>
               ) : (
-                <Image
+                <Img
                   src={getQrCode(shareUrl)}
                   alt="a2e-qr"
                   className="size-64 md:size-52 dark:invert rounded-xl"

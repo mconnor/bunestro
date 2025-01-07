@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { ShareModal } from "./utils/react-only/ShareModal";
 import { Button } from "./ui/button";
-import { Image } from "./utils/react-only/Image";
+import { Img } from "./utils/react-only/Image";
 // import Image from "./utils/react-only/Image";
 type TTest = {
   className?: string;
@@ -19,7 +19,7 @@ export function Test({ className }: TTest) {
 
       <div className="flex flex-wrap gap-4 justify-center mb-4 p-6">
         {Array.from({ length: 620 }).map((_, index) => (
-          <Image
+          <Img
             key={index}
             src={`https://picsum.photos/800/600?random=${index}`}
             alt={`Random image ${index + 1}`}
@@ -28,7 +28,7 @@ export function Test({ className }: TTest) {
             className="rounded-md"
           />
         ))}
-        <Image
+        <Img
           src={`/ogImage.png`}
           alt={`ig img`}
           width={300}

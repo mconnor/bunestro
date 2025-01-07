@@ -4,20 +4,24 @@ import { useLazyLoad } from "@/hooks/useLazyLoad";
 import { cn } from "@/lib/utils";
 // lazy loads imgs with a placeholder on the client side
 // requires client:load directive to work,
-interface ResponsiveImageProps {
+interface ResponsiveImageProps
+  extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
   alt: string;
   width: number;
   height: number;
   className?: string;
+  skeletonClassName?: string;
 }
 
-export function Image({
+export function Img({
   src,
   alt,
   width,
   height,
   className = "",
+  skeletonClassName = "",
+  ...restProps
 }: ResponsiveImageProps) {
   const [imageRef, isInView] = useLazyLoad();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -37,6 +41,7 @@ export function Image({
       {/* fallback for users with JS disabled */}
       <noscript>
         <img
+          {...restProps}
           src={src}
           alt={alt}
           width={width}
@@ -47,6 +52,7 @@ export function Image({
 
       {isInView ? (
         <img
+          {...restProps}
           src={src}
           alt={alt}
           width={width}
@@ -64,6 +70,7 @@ export function Image({
         <Skeleton
           className={cn(
             "absolute top-0 left-0 w-full h-full rounded-none",
+            skeletonClassName,
             hasError && "[animation-play-state:paused]"
           )}
         />
