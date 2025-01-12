@@ -1,48 +1,115 @@
-# Astro Starter Kit: Basics
+[![Bunestro](https://bunestro.ardastroid.com/ogImage.png)](https://bunestro.ardastroid.com/)
 
-```sh
-npm create astro@latest -- --template basics
+# Bunestro
+
+An Astro app with Tailwind CSS, React, Shadcn, and Tailwind-motion setup along with built-in utilities. [Live deployment](https://bunestro.ardastroid.com/)
+Repo: [Github Repo](https://github.com/DarkidOP/bunestro)
+
+## Getting Started
+
+Create a new project using:
+
+```bash
+bunx @ardly/bunestro project-name
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+You can specify `-vs` or `--cursor` flags to auto open the project in VSCode or Cursor respectively after installation.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Usage (run locally)
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+> Requires `bun` or `nodejs` installed and up to date
 
-## 🚀 Project Structure
+Go to the `root` folder where `package.json` exists.
 
-Inside of your Astro project, you'll see the following folders and files:
+> skip this if you're using the bunx @ardly/bunestro project-name command, it auto installs the deps
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+# Using bun
+bun install
+
+# Using npm
+npm install
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+### Then
 
-## 🧞 Commands
+```bash
+# or
+bun run dev
 
-All commands are run from the root of the project, from a terminal:
+# Using npm
+npm run dev
+```
+
+#### Command list
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| `bun run dev`             | Starts local dev server at `localhost:4321`      |
+| `bun run build`           | Build your production site to `./dist/`          |
+| `bun run preview`         | Preview your build locally, before deploying     |
+| `bun run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `bun run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+> just replace `bun` with `npm` if you're using npm
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Features
+
+- Astro 5
+- Tailwind CSS
+- React Integration
+- [Shadcn](https://ui.shadcn.com/) components
+- Custom utility components
+- Theme support (dark and light mode)
+- Tailwind CSS animations using [tailwindcss-motion](https://docs.rombo.co/tailwind)
+- SEO optimized (SEO component provided)
+- [Prettier](https://prettier.io/) for formatting with tailwind plugin
+- Responsive optimized img loader component
+- Share modal
+- Utilities like `qrCode gen, string shortner, uniqueCode gen, img placeholder, email validation, hashing etc`
+
+## Config
+
+- Configure colors in `src/styles/globals.css`
+- Base styles (scrollbar style, selection highlighting etc) in `src/styles/customGlobals.css`
+- Site default metadata in `astro.config.mjs`
+- Component configurations in `src/lib/data/siteData.ts`
+- Astro configurations in `astro.config.mjs`
+
+## Roadmap
+
+- [x] Add theme support
+- [x] Add basic Shadcn components
+- [x] Add sample responsive components
+- [ ] Add more documentation
+- [ ] Add state management examples
+
+## Socials
+
+- Website: [ardastroid.com](https://ardastroid.com)
+- Email: [hello@ardastroid.com](mailto:hello@ardastroid.com)
+- GitHub: [@ardastroid](https://github.com/DarkidOP)
+
+## License
+
+MIT License
+
+Copyright (c) 2024 Ard Astroid / Farhan Ashhab Nur
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
