@@ -1,3 +1,4 @@
+// only use this if a component might throw an error in production
 import {
   Component,
   type ErrorInfo,
