@@ -1,6 +1,12 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
+interface NavigatorWithUserAgentData extends Navigator {
+  userAgentData?: {
+    platform: string;
+  };
+}
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
@@ -74,6 +80,30 @@ export const generateUniqueCode = (): string | null => {
 export const randomNum = (min: number, max: number): number => (
   Math.floor(Math.random() * (max - min)) + min
 );
+
+// get the os
+export function getOS() {
+  if (isSSR) return null;
+  let userAgent = window.navigator.userAgent,
+    platform = (window.navigator as NavigatorWithUserAgentData)?.userAgentData?.platform || window.navigator.platform,
+    macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+    windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+    iosPlatforms = ['iPhone', 'iPad', 'iPod'],
+    os = null;
+
+  if (macosPlatforms.indexOf(platform) !== -1) {
+    os = 'Mac OS';
+  } else if (iosPlatforms.indexOf(platform) !== -1) {
+    os = 'iOS';
+  } else if (windowsPlatforms.indexOf(platform) !== -1) {
+    os = 'Windows';
+  } else if (/Android/.test(userAgent)) {
+    os = 'Android';
+  } else if (/Linux/.test(platform)) {
+    os = 'Linux';
+  }
+  return os;
+}
 
 // simple hashing algorithm (not secure for password hashing)
 export function murmurhash(key: string) {
