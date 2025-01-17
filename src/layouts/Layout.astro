@@ -5,9 +5,10 @@ import "@/styles/customGlobals.css";
 import "@fontsource-variable/montserrat";
 
 // https://docs.astro.build/en/guides/view-transitions/#trigger-navigation
-// import { ClientRouter } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
 import Metadata from "@/components/utils/Metadata.astro";
+import PageLoader from "@/components/utils/PageLoader.astro";
 type Props = {
   title?: string;
 };
@@ -24,6 +25,7 @@ import { Toaster } from "@/components/ui/toaster";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <ClientRouter />
     <!-- Theme script, in head to avoid light/dark mode flickering on page change -->
     <script is:inline>
       const theme = (() => {
@@ -52,18 +54,28 @@ import { Toaster } from "@/components/ui/toaster";
           attributeFilter: ["class"],
         });
       }
+
+      document.addEventListener("astro:after-swap", () => {
+        const theme = localStorage.getItem("theme") ?? "light";
+        document.documentElement.classList[theme === "dark" ? "add" : "remove"](
+          "dark"
+        );
+      });
     </script>
     <Metadata {title} />
   </head>
   <body>
     <ScrollToTopButton client:load className="fixed bottom-4 right-4 z-50" />
-    <slot />
+    <main transition:animate="slide">
+      <slot />
+    </main>
     <ModeToggle
       client:load
       className="fixed left-2 bottom-2 z-50"
       iconClassName="size-3"
     />
     <Toaster client:load />
+    <PageLoader />
   </body>
 </html>
 
