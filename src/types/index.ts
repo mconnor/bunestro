@@ -69,3 +69,15 @@ export type TMetadataIcons = {
     shortcut: string;
     apple: string;
 };
+
+
+export type MetadataProps = {
+    url?: string | URL;
+    title?: string;
+    description?: string;
+    robots?: Trobots;
+    ogTitle?: string;
+    ogImage?: TImage;
+    keywords?: string[];
+    author?: Author;
+}

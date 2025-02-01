@@ -81,6 +81,28 @@ export const randomNum = (min: number, max: number): number => (
   Math.floor(Math.random() * (max - min)) + min
 );
 
+export function nullChecker(
+  string: any,
+  optinalPassedString?: string
+) {
+  if (
+    string === undefined ||
+    string === null ||
+    string === "" ||
+    string === " " ||
+    string === false
+  ) {
+    if (
+      optinalPassedString === undefined ||
+      optinalPassedString == null ||
+      optinalPassedString == ""
+    ) {
+      return null;
+    } else return optinalPassedString;
+  } else return string;
+}
+
+
 // get the os
 export function getOS() {
   if (isSSR) return null;

@@ -6,8 +6,8 @@ export const siteData: TSiteData = {
     favicon: "/favicon.svg", // .svg / .ico / .png
     name: "Bunestro - Astro v5 Bun Starter",
     shortName: "Bunestro",
-    publisher: "bunestro.vercel.app",
-    baseUrl: import.meta.env.SIT, //"bunestro.vercel.app"
+    publisher: "bunestro.ardastroid.com",
+    baseUrl: import.meta.env.SITE, //"bunestro.vercel.app"
     description:
         "Bunestro is a astro v5 starter template with tailwindcss, shadcn and some other cool feature that runs on bun or node",
     ogImage: { src: "/ogImage.png", alt: "Bunestro", width: 1200, height: 630 },
