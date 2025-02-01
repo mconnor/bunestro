@@ -15,6 +15,8 @@ const {
   ogTitle,
   ogImage,
   author,
+  metadataColor,
+  metadataIcons,
 }: Props = Astro.props;
 
 let siteTitle = title ? `${title} / ${siteData.name}` : siteData.name;
@@ -23,12 +25,12 @@ let siteTitle = title ? `${title} / ${siteData.name}` : siteData.name;
 <meta
   name="theme-color"
   media="(prefers-color-scheme: light)"
-  content={siteData.metadata_color.light}
+  content={metadataColor?.light || siteData.metadata_color.light}
 />
 <meta
   name="theme-color"
   media="(prefers-color-scheme: dark)"
-  content={siteData.metadata_color.dark}
+  content={metadataColor?.dark || siteData.metadata_color.dark}
 />
 
 <title>{siteTitle}</title>
@@ -75,9 +77,9 @@ let siteTitle = title ? `${title} / ${siteData.name}` : siteData.name;
 <meta name="twitter:domain" content={url} />
 
 <!-- icons -->
-<link rel="shortcut icon" href={icons.shortcut} />
-<link rel="icon" href={icons.icon} />
-<link rel="apple-touch-icon" href={icons.apple} />
+<link rel="shortcut icon" href={metadataIcons?.shortcut || icons.shortcut} />
+<link rel="icon" href={metadataIcons?.icon || icons.icon} />
+<link rel="apple-touch-icon" href={metadataIcons?.apple || icons.apple} />
 
 <link rel="sitemap" href="/sitemap-index.xml" />
 <meta name="generator" content={Astro.generator} />

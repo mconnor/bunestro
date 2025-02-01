@@ -12,8 +12,8 @@ export const siteData: TSiteData = {
         "Bunestro is a astro v5 starter template with tailwindcss, shadcn and some other cool feature that runs on bun or node",
     ogImage: { src: "/ogImage.png", alt: "Bunestro", width: 1200, height: 630 },
     metadata_color: {
-        light: "#794af4",
-        dark: "#794af4",
+        light: "#3A86FF",
+        dark: "#3A86FF",
     },
     author: {
         name: "darkidop",

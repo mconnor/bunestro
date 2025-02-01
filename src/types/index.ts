@@ -80,4 +80,6 @@ export type MetadataProps = {
     ogImage?: TImage;
     keywords?: string[];
     author?: Author;
+    metadataColor?: MetadataColor;
+    metadataIcons?: TMetadataIcons;
 }
