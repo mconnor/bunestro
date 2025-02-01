@@ -2,13 +2,6 @@
 import defaultTheme from "tailwindcss/defaultTheme";
 import plugin from "tailwindcss/plugin";
 
-// plugins
-import tailwindcssAnimate from "tailwindcss-animate";
-import tailwindcssMotion from "tailwindcss-motion";
-
-import { base } from "./src/styles/tailwind/base";
-import { utilities } from "./src/styles/tailwind/tailwindUtils";
-
 export default {
   darkMode: ["class"],
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -83,29 +76,4 @@ export default {
       },
     },
   },
-  plugins: [
-    utilities,
-    base,
-    tailwindcssAnimate,
-    tailwindcssMotion,
-    plugin(({ matchUtilities, theme }) => {
-      matchUtilities({
-        clamp(value) {
-          // load font sizes from theme
-          const sizes = theme("fontSize");
-
-          // parse the value passed in from class name
-          // split it by "-" or "," or ", " and compare pieces to fontSize values
-          const split = value
-            .split(/[-,]+/)
-            .map((v) => (sizes[v] ? sizes[v]["0"] : v));
-
-          // return a clamped font-size
-          return {
-            fontSize: `clamp(${split[0]}, ${split[1]}, ${split[2]})`,
-          };
-        },
-      });
-    }),
-  ],
 };
