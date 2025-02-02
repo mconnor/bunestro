@@ -1,9 +1,9 @@
-[![Bunestro](https://bunestro.ardastroid.com/ogImage.png)](https://bunestro.ardastroid.com/)
+[![Bunestro](https://bunestro.ardastroid.com/ogImage.webp)](https://bunestro.ardastroid.com/)
 
 # Bunestro
 
 An Astro app with Tailwind CSS, React, Shadcn, and Tailwind-motion setup along with built-in utilities. [Live deployment](https://bunestro.ardastroid.com/)
-Repo: [Github Repo](https://github.com/DarkidOP/bunestro)
+Repo: [Github Repo](https://github.com/ardzero/bunestro)
 
 ## Getting Started
 
