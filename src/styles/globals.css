@@ -127,6 +127,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: clip;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 
   *::selection {
@@ -139,87 +140,91 @@
     background-color: white;
   }
 
-  body {
-    font-feature-settings: "rlig" 1, "calt" 1;
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
   }
 }
 
-@layer utilities {
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-  }
-
-  /* Scrollbar utilities */
-  .scrollbar-hidden::-webkit-scrollbar {
+/* utility classes needs to be kebab case {ex: test-red} */
+/* Scrollbar utilities */
+@utility scrollbar-hidden {
+  &::-webkit-scrollbar {
     display: none;
   }
-  .scrollbar-hidden {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  .scrollbar-thin::-webkit-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@utility scrollbar-thin {
+  &::-webkit-scrollbar {
     width: 4px;
     height: 4px;
   }
+}
 
-  /* Text wrapping */
-  .break-words {
-    white-space: pre-wrap;
-    word-break: break-word;
-  }
+@utility break-words {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
 
-  /* Centering utilities */
-  .center-x {
-    margin-left: 50%;
-    transform: translateX(-50%);
-  }
-  .center-y {
-    margin-top: 50%;
-    transform: translateY(-50%);
-  }
-  .center-position-x {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .center-position-y {
-    top: 50%;
-    transform: translateY(-50%);
-  }
+/* Centering utilities */
+@utility center-x {
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
 
-  /* Link styling */
-  .link {
-    color: hsl(var(--primary));
-    text-decoration-thickness: 2px;
-    text-underline-offset: 2px;
-  }
-  .link:hover {
+@utility center-y {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@utility center-position-x {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@utility center-position-y {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Link styling */
+@utility link {
+  color: hsl(var(--primary));
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+
+  &:hover {
     text-decoration-line: underline;
-  }
-
-  /* Container utility */
-  .container-mini {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 48rem; /* 3xl = 48rem */
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    width: 100%;
-  }
-
-  /* Text heading utilities */
-  .text-heading {
-    font-size: clamp(3rem, 1.548rem + 3.871vw, 6rem);
-    font-weight: 700;
-    line-height: clamp(3rem, 1.065rem + 5.161vw, 7rem);
-  }
-
-  .text-heading-sm {
-    font-size: clamp(1.5rem, 0.774rem + 1.935vw, 3rem);
-    font-weight: 700;
-    line-height: clamp(1.75rem, 0.874rem + 2.335vw, 3.56rem);
   }
 }
 
+/* Container utility */
+@utility container-mini {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 48rem; /* 3xl = 48rem */
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  width: 100%;
+}
+
+@utility text-heading {
+  font-size: clamp(3rem, 1.548rem + 3.871vw, 6rem);
+  font-weight: 700;
+  line-height: clamp(3rem, 1.065rem + 5.161vw, 7rem);
+}
+.text-heading-sm {
+  font-size: clamp(1.5rem, 0.774rem + 1.935vw, 3rem);
+  font-weight: 700;
+  line-height: clamp(1.75rem, 0.874rem + 2.335vw, 3.56rem);
+}
+
+/* @layer utilities {
+} */
+
+/* colors */
 @layer base {
   :root {
     --background: 0 0% 100%;
