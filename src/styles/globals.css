@@ -124,6 +124,7 @@
   }
   ::-webkit-scrollbar-thumb:hover {
     background-color: hsl(var(--foreground) / 0.35);
+    cursor: pointer;
   }
   ::-webkit-scrollbar-track {
     background-color: hsl(var(--foreground) / 0.05);
@@ -133,7 +134,21 @@
     overflow-x: clip;
     --scroll-behavior: smooth;
   }
+  /* fix layout shift of select box */
+  html > body[style] {
+    margin-right: 0 !important;
+  }
 
+  /* input field fix*/
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+  }
   input,
   textarea {
     @apply bg-transparent outline-none w-full;
@@ -237,16 +252,101 @@
   font-weight: 700;
   line-height: clamp(3rem, 1.065rem + 5.161vw, 7rem);
 }
-.text-heading-sm {
+@utility text-heading-sm {
   font-size: clamp(1.5rem, 0.774rem + 1.935vw, 3rem);
   font-weight: 700;
   line-height: clamp(1.75rem, 0.874rem + 2.335vw, 3.56rem);
 }
 
+/* gradients for cricle overlays */
+@utility bg-primary-radial-gradient {
+  background: hsl(var(--primary) / 0.03);
+  background: radial-gradient(
+    circle,
+    hsl(var(--primary) / 0.5) 0%,
+    hsl(var(--primary) / 0.18) 30%,
+    hsl(var(--primary) / 0.05) 50%,
+    hsl(var(--primary) / 0) 70%
+  );
+  background-size: cover;
+  background-position: center;
+  object-fit: fill;
+  @variant dark {
+    background: hsl(var(--primary) / 0.03);
+    background: radial-gradient(
+      circle,
+      hsl(var(--primary) / 0.4) 0%,
+      hsl(var(--primary) / 0.15) 30%,
+      hsl(var(--primary) / 0.05) 50%,
+      hsl(var(--primary) / 0) 70%
+    );
+    background-size: cover;
+    background-position: center;
+    object-fit: fill;
+  }
+}
+
+@utility bg-foreground-radial-gradient {
+  background: hsl(var(--foreground) / 0.01);
+  background: radial-gradient(
+    circle,
+    hsl(var(--foreground) / 0.3) 0%,
+    hsl(var(--foreground) / 0.09) 30%,
+    hsl(var(--foreground) / 0.02) 50%,
+    hsl(var(--foreground) / 0) 70%
+  );
+  background-size: cover;
+  background-position: center;
+  object-fit: fill;
+}
+
+@utility boder-primary-gradient {
+  position: relative;
+  background: hsl(var(--primary) / 0.03);
+  background: radial-gradient(
+    linear,
+    hsl(var(--primary) / 0.5) 0%,
+    hsl(var(--primary) / 0.18) 30%,
+    hsl(var(--primary) / 0.05) 50%,
+    hsl(var(--primary) / 0) 70%
+  );
+  background: linear-gradient(
+    320deg,
+    rgba(119, 47, 253, 1) 0%,
+    rgba(61, 28, 101, 0.7) 15%,
+    rgba(140, 47, 253, 0) 40%,
+    rgba(129, 47, 253, 0) 65%,
+    rgba(89, 34, 152, 0.6) 88%,
+    rgba(119, 47, 253, 1) 100%
+  );
+  background-size: cover;
+  background-position: center;
+  object-fit: fill;
+  &::before {
+    content: "";
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    border-radius: 50%;
+    background-color: hsl(var(--background));
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@utility bg-liner-overlay-gradient {
+  background: linear-gradient(
+    180deg,
+    hsl(var(--background) / 0) 0%,
+    hsl(var(--background) / 1) 100%
+  );
+}
 /* @layer utilities {
 } */
 
 /* colors */
+
 @layer base {
   :root {
     --background: 0 0% 100%;

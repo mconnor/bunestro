@@ -12,9 +12,7 @@ import img3 from "@/assets/img3.jpg";
 
 <Layout>
   <section class="container mx-auto">
-    <h1
-      class="text-center font-bold my-10 scrollbar-hidden link clamp-[1.2rem-10vw-2.5rem]"
-    >
+    <h1 class="text-center font-bold my-10 clamp-[1.2rem-10vw-2.5rem]">
       An responsive Image component for Astro
     </h1>
     <div class="flex flex-wrap gap-4 justify-center mb-4 p-6">
@@ -44,8 +42,10 @@ import img3 from "@/assets/img3.jpg";
         useAstroImage={true}
       />
     </div>
+    <div class="w-20 h-20 rounded-full boder-primary-gradient"></div>
+  </section>
+  <!-- <div class="flex flex-wrap gap-4 justify-center mb-4 p-6">
 
-    <!-- <div class="flex flex-wrap gap-4 justify-center mb-4 p-6">
       {
         Array.from({ length: 250 }).map((_, index) => (
           <Img
@@ -58,10 +58,9 @@ import img3 from "@/assets/img3.jpg";
         ))
       }
     </div> -->
-    <!-- <Test client:load /> -->
+  <!-- <Test client:load /> -->
 
-    <div class="flex flex-col items-center justify-center">
-      <Button href="/test" className="">Test</Button>
-    </div>
-  </section>
+  <div class="flex flex-col items-center justify-center">
+    <Button href="/test" className="">Test</Button>
+  </div>
 </Layout>

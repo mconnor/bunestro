@@ -73,7 +73,6 @@ npm run dev
 ## Config
 
 - Configure colors in `src/styles/globals.css`
-- Base styles (scrollbar style, selection highlighting etc) in `src/styles/customGlobals.css`
 - Site default metadata in `astro.config.mjs`
 - Component configurations in `src/lib/data/siteData.ts`
 - Astro configurations in `astro.config.mjs`
