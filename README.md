@@ -65,7 +65,6 @@ npm run dev
 - Theme support (dark and light mode)
 - Tailwind CSS animations using [tailwindcss-motion](https://docs.rombo.co/tailwind)
 - SEO optimized (SEO component provided)
-- [Prettier](https://prettier.io/) for formatting with tailwind plugin
 - Responsive optimized img loader component
 - Share modal
 - Utilities like `qrCode gen, string shortner, uniqueCode gen, img placeholder, email validation, hashing etc`
