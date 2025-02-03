@@ -49,7 +49,7 @@ const RiskyComponent = () => {
   // Some component that might error
   return (
     <Card className="p-6">
-      <h2 className="text-xl font-semibold mb-4">Test 4: HOC Usage</h2>
+      <h2 className="mb-4 text-xl font-semibold">Test 4: HOC Usage</h2>
       {/* Add the HOC example here if you implemented it */}
       <ErrorBoundary>
         <BuggyCounter />
@@ -66,7 +66,7 @@ export default function TestPage() {
     <div className="grid gap-8 md:grid-cols-2">
       {/* Test Case 1: Render Error */}
       <Card className="p-6">
-        <h2 className="text-xl font-semibold mb-4">Test 1: Render Error</h2>
+        <h2 className="mb-4 text-xl font-semibold">Test 1: Render Error</h2>
         <ErrorBoundary>
           <BuggyCounter />
         </ErrorBoundary>
@@ -74,7 +74,7 @@ export default function TestPage() {
 
       {/* Test Case 2: Async Error */}
       <Card className="p-6">
-        <h2 className="text-xl font-semibold mb-4">Test 2: Async Error</h2>
+        <h2 className="mb-4 text-xl font-semibold">Test 2: Async Error</h2>
         <ErrorBoundary>
           <AsyncErrorComponent />
         </ErrorBoundary>
@@ -82,12 +82,12 @@ export default function TestPage() {
 
       {/* Test Case 3: Custom Fallback */}
       <Card className="p-6">
-        <h2 className="text-xl font-semibold mb-4">Test 3: Custom Fallback</h2>
+        <h2 className="mb-4 text-xl font-semibold">Test 3: Custom Fallback</h2>
         <ErrorBoundary
           fallback={({ error, reset }) => (
-            <div className="p-4 bg-orange-100 dark:bg-orange-900 rounded-lg">
+            <div className="rounded-lg bg-orange-100 p-4 dark:bg-orange-900">
               <h3 className="font-medium">Custom Error View</h3>
-              <p className="text-sm text-muted-foreground mt-2">
+              <p className="mt-2 text-sm text-muted-foreground">
                 This is a custom error message with different styling.
               </p>
               <code>{error?.message}</code>

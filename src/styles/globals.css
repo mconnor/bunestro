@@ -151,7 +151,7 @@
   }
   input,
   textarea {
-    @apply bg-transparent outline-none w-full;
+    @apply w-full bg-transparent outline-none;
     /* background-color: transparent;
     outline: none;
     width: 100%; */
@@ -164,7 +164,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: clip;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
   }
 
   *::selection {
@@ -300,7 +302,7 @@
   object-fit: fill;
 }
 
-@utility boder-primary-gradient {
+@utility border-primary-gradient {
   position: relative;
   background: hsl(var(--primary) / 0.03);
   background: radial-gradient(
@@ -407,6 +409,6 @@
     @apply border-border;
   }
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply bg-background font-sans text-foreground antialiased;
   }
 }
