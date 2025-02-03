@@ -41,6 +41,8 @@ bun run dev
 npm run dev
 ```
 
+> bun is not officially supported by astro, so if you ran into any problems, try using `npm` to see if it works before creating an github issue.
+
 #### Command list
 
 | Command                   | Action                                           |
@@ -55,8 +57,8 @@ npm run dev
 
 ## Features
 
-- Astro 5
-- Tailwind CSS
+- Astro 5.2
+- Tailwind CSS v4
 - React Integration
 - [Shadcn](https://ui.shadcn.com/) components
 - Custom utility components
@@ -80,7 +82,8 @@ npm run dev
 
 - [x] Add theme support
 - [x] Add basic Shadcn components
-- [x] Add sample responsive components
+- [x] Add static img optimization component
+- [ ] Add sample responsive components
 - [ ] Add more documentation
 - [ ] Add state management examples
 
@@ -88,7 +91,7 @@ npm run dev
 
 - Website: [ardastroid.com](https://ardastroid.com)
 - Email: [hello@ardastroid.com](mailto:hello@ardastroid.com)
-- GitHub: [@ardastroid](https://github.com/DarkidOP)
+- GitHub: [@ardzero](https://github.com/ardzero)
 
 ## License
 
