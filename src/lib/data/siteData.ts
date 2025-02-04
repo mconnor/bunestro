@@ -10,7 +10,7 @@ export const siteData: TSiteData = {
     baseUrl: import.meta.env.SITE, //"bunestro.vercel.app"
     description:
         "Bunestro is a astro v5 starter template with tailwindcss, shadcn and some other cool feature that runs on bun or node",
-    ogImage: { src: "/ogImage.png", alt: "Bunestro", width: 1200, height: 630 },
+    ogImage: { src: "/ogImage.webp", alt: "Bunestro", width: 1200, height: 630 },
     metadata_color: {
         light: "#3A86FF",
         dark: "#3A86FF",
