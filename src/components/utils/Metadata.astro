@@ -2,35 +2,35 @@
 import type { MetadataProps } from "@/types";
 interface Props extends MetadataProps {}
 import {
-  siteData,
-  twitterMetaData as twMetaData,
-  icons,
+	siteData,
+	twitterMetaData as twMetaData,
+	icons,
 } from "@/lib/data/siteData";
 const {
-  url = Astro.url,
-  title,
-  description,
-  robots = siteData.robotsDefault,
-  keywords = siteData.keywords,
-  ogTitle,
-  ogImage,
-  author,
-  metadataColor,
-  metadataIcons,
+	url = Astro.url,
+	title,
+	description,
+	robots = siteData.robotsDefault,
+	keywords = siteData.keywords,
+	ogTitle,
+	ogImage,
+	author,
+	metadataColor,
+	metadataIcons,
 }: Props = Astro.props;
 
 let siteTitle = title ? `${title} / ${siteData.name}` : siteData.name;
 ---
 
 <meta
-  name="theme-color"
-  media="(prefers-color-scheme: light)"
-  content={metadataColor?.light || siteData.metadata_color.light}
+	name="theme-color"
+	media="(prefers-color-scheme: light)"
+	content={metadataColor?.light || siteData.metadata_color.light}
 />
 <meta
-  name="theme-color"
-  media="(prefers-color-scheme: dark)"
-  content={metadataColor?.dark || siteData.metadata_color.dark}
+	name="theme-color"
+	media="(prefers-color-scheme: dark)"
+	content={metadataColor?.dark || siteData.metadata_color.dark}
 />
 
 <title>{siteTitle}</title>
@@ -53,12 +53,12 @@ let siteTitle = title ? `${title} / ${siteData.name}` : siteData.name;
 <meta property="og:image" content={ogImage?.src || siteData.ogImage.src} />
 <meta property="og:image:url" content={ogImage?.src || siteData.ogImage.src} />
 <meta
-  property="og:image:width"
-  content={ogImage?.width?.toString() || siteData.ogImage.width?.toString()}
+	property="og:image:width"
+	content={ogImage?.width?.toString() || siteData.ogImage.width?.toString()}
 />
 <meta
-  property="og:image:height"
-  content={ogImage?.height?.toString() || siteData.ogImage.height?.toString()}
+	property="og:image:height"
+	content={ogImage?.height?.toString() || siteData.ogImage.height?.toString()}
 />
 <meta property="og:image:alt" content={ogImage?.alt || siteData.ogImage.alt} />
 <meta property="og:type" content="website" />
@@ -69,8 +69,8 @@ let siteTitle = title ? `${title} / ${siteData.name}` : siteData.name;
 <meta name="twitter:creator" content={author?.name || twMetaData.creator} />
 <meta name="twitter:title" content={title || twMetaData.title} />
 <meta
-  name="twitter:description"
-  content={description || twMetaData.description}
+	name="twitter:description"
+	content={description || twMetaData.description}
 />
 <meta name="twitter:image" content={ogImage?.src || twMetaData.image} />
 <meta name="twitter:image:alt" content={ogImage?.alt || twMetaData.title} />

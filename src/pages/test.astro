@@ -10,33 +10,33 @@ import img1 from "@/assets/img1.jpg";
 ---
 
 <Layout>
-  <section>
-    <Button href="/" className="mt-10 mx-auto block text-center w-fit">
-      home
-    </Button>
-    <Img
-      src={img1}
-      alt={`Random image 1`}
-      width={350}
-      height={500}
-      className="rounded-md mx-auto mt-10"
-      useAstroImage={true}
-      transition:name="wobble"
-    />
-    <div class="flex flex-wrap gap-4 justify-center mb-4 p-6">
-      {
-        Array.from({ length: 550 }).map((_, index) => (
-          <Img
-            src={`https://picsum.photos/800/600?random=${index}`}
-            alt={`Random image ${index + 1}`}
-            width={300}
-            height={500}
-            className="rounded-md"
-          />
-        ))
-      }
-    </div>
-    <!-- <Image src="/ogImage.png" alt="ogImage" width={900} height={500} /> -->
-    <!-- <Test client:load /> -->
-  </section>
+	<section>
+		<Button href="/" className="mx-auto mt-10 block w-fit text-center">
+			home
+		</Button>
+		<Img
+			src={img1}
+			alt={`Random image 1`}
+			width={350}
+			height={500}
+			className="mx-auto mt-10 rounded-md"
+			useAstroImage={true}
+			transition:name="wobble"
+		/>
+		<div class="mb-4 flex flex-wrap justify-center gap-4 p-6">
+			{
+				Array.from({ length: 550 }).map((_, index) => (
+					<Img
+						src={`https://picsum.photos/800/600?random=${index}`}
+						alt={`Random image ${index + 1}`}
+						width={300}
+						height={500}
+						className="rounded-md"
+					/>
+				))
+			}
+		</div>
+		<!-- <Image src="/ogImage.png" alt="ogImage" width={900} height={500} /> -->
+		<!-- <Test client:load /> -->
+	</section>
 </Layout>

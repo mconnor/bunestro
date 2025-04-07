@@ -26,5 +26,10 @@
         "list.activeSelectionBackground": "#681DD74d",
         "panelTitle.activeBorder": "#752ae4"
     },
-    "window.title": "bunestro"
+    "window.title": "bunestro",
+    "debug.javascript.defaultRuntimeExecutable": {
+        "pwa-node": "${workspaceFolder}/.vscode/mise-tools/node"
+    },
+    "bun.runtime": "${workspaceFolder}/.vscode/mise-tools/bun",
+    "typescript.tsdk": "node_modules/typescript/lib"
 }
