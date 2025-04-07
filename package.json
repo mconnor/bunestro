@@ -4,6 +4,9 @@
 	"author": "Ard Astroid <ardastroid@gmail.com>",
 	"private": true,
 	"type": "module",
+	"imports": {
+		"#*": "./src/*"
+	},
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "bunx --bun astro dev",
@@ -50,6 +53,11 @@
 		"tailwindcss-motion": "^1.1.0",
 		"typescript": "^5.8.3"
 	},
+	"engines": {
+		"node": ">= 22.9.0",
+		"bun": ">=1.0.0"
+	},
+	"packageManager": "bun@1.2.8",
 	"bun": {
 		"runtime": true
 	}
