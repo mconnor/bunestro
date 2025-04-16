@@ -1,4 +1,8 @@
-import type { TSiteData, TtwitterMetaData, TMetadataIcons } from "@/types";
+import type {
+	TSiteData,
+	TtwitterMetaData,
+	TMetadataIcons,
+} from "#types/index.ts";
 
 // edit the webmanifest file in /public to change the name, short_name, and icons in android
 // in webmanifest, theme_color is the color of the app icon's background and

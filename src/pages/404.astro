@@ -1,10 +1,10 @@
 ---
-import Layout from "@/layouts/Layout.astro";
+import Layout from "#layouts/Layout";
 
 // icons
 import { ArrowLeft } from "lucide-react";
 // components
-import { Button } from "@/components/ui/button";
+import { Button } from "#ui/button";
 
 // Get the current pathname
 const pathname = Astro.url.toString().replace(/^(https?:\/\/)?(www\.)?/, "");
@@ -31,7 +31,7 @@ const pathname = Astro.url.toString().replace(/^(https?:\/\/)?(www\.)?/, "");
 						strokeWidth={2}
 						aria-hidden="true"
 					/>
-					Return to Home
+					Return to Home xxx
 				</a>
 			</Button>
 		</div>

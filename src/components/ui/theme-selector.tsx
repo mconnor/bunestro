@@ -5,10 +5,10 @@ import {
 	TooltipContent,
 	TooltipProvider,
 	TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
-import { cn } from "@/lib/utils";
+} from "#ui/tooltip";
+import { RadioGroup, RadioGroupItem } from "#ui/radio-group";
+import { Label } from "#ui/label";
+import { cn } from "#lib/utils";
 
 export function ModeToggle({
 	className,

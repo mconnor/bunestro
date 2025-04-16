@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "#lib/utils";
 import { ShareModal } from "./utils/react-only/ShareModal";
 import { Button } from "./ui/button";
 import { Img } from "./utils/react-only/Image";

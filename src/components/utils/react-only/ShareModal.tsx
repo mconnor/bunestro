@@ -1,9 +1,9 @@
 "use client";
 // a share modal with qr, fb, twitter/x, linkedin
-import { Img } from "@/components/utils/react-only/Image";
+import { Img } from "#utils/react-only/Image";
 import { Copy } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { getQrCode } from "@/lib/utils";
+import { Button } from "#ui/button";
+import { getQrCode } from "#lib/utils";
 import {
 	Drawer,
 	DrawerClose,
@@ -11,10 +11,10 @@ import {
 	DrawerFooter,
 	DrawerTrigger,
 	DrawerTitle,
-} from "@/components/ui/drawer";
-import { Input } from "@/components/ui/input";
-import { toast } from "@/hooks/use-toast";
-import { Icons } from "@/components/utils/icons";
+} from "#ui/drawer";
+import { Input } from "#ui/input";
+import { toast } from "#hooks/use-toast";
+import { Icons } from "#utils/icons.tsx";
 
 type ShareModalProps = React.ComponentProps<typeof Drawer> & {
 	shareUrl: string;

@@ -1,6 +1,6 @@
-import type { TnavData } from "@/types";
-import { Icons } from "@/components/utils/icons";
-import { siteData } from "@/lib/data/siteData";
+import type { TnavData } from "#types/index.ts";
+import { Icons } from "#utils/icons.tsx";
+import { siteData } from "#lib/data/siteData";
 
 export const navData: TnavData = {
 	title: siteData.shortName,

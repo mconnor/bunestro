@@ -1,21 +1,21 @@
 ---
 // https://docs.astro.build/en/guides/view-transitions/#trigger-navigation
-import { ClientRouter } from "astro:transitions";
+// import { ClientRouter } from "astro:transitions";
 
-import Metadata from "@/components/utils/Metadata.astro";
-import PageLoader from "@/components/utils/PageLoader.astro";
+// import Metadata from "#utils/Metadata.astro";
+import PageLoader from "#utils/PageLoader.astro";
 
-import type { MetadataProps } from "@/types";
+import type { MetadataProps } from "#types/index.ts";
 interface Props extends MetadataProps {
 	pageLoader?: boolean;
 }
 const { pageLoader = true }: Props = Astro.props;
 
 // components
-import { ModeToggle } from "@/components/ui/theme-selector";
-import { ScrollToTopButton } from "@/components/utils/TopButton";
-import { Toaster } from "@/components/ui/toaster";
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import { ModeToggle } from "#ui/theme-selector";
+import { ScrollToTopButton } from "#utils/TopButton.tsx";
+import { Toaster } from "#ui/toaster";
+import BaseLayout from "#layouts/BaseLayout";
 ---
 
 <BaseLayout>

@@ -1,5 +1,5 @@
-import { Icons } from "@/components/utils/icons";
-import { cn } from "@/lib/utils";
+// import { Icons } from "#utils/icons.tsx";
+import { cn } from "#lib/utils";
 // a simple spinner fallback for suspanse components
 export const SuspanseFallback = ({
 	className,

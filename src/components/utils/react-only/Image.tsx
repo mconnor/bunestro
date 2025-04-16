@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
-import { useLazyLoad } from "@/hooks/useLazyLoad";
-import { cn } from "@/lib/utils";
+import { Skeleton } from "#ui/skeleton";
+import { useLazyLoad } from "#hooks/useLazyLoad";
+import { cn } from "#lib/utils";
 // lazy loads imgs with a placeholder on the client side
 // requires client:load directive to work,
 interface ResponsiveImageProps

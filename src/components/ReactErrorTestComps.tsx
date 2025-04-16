@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "#ui/button";
 import {
 	ErrorBoundary,
 	withErrorBoundary,
-} from "@/components/utils/react-only/ErrorBoundary";
-import { Card } from "@/components/ui/card";
+} from "#utils/react-only/ErrorBoundary";
+import { Card } from "#ui/card";
 
 // Component that throws an error during render
 const BuggyCounter = () => {
@@ -84,7 +84,7 @@ export default function TestPage() {
 			<Card className="p-6">
 				<h2 className="mb-4 text-xl font-semibold">Test 3: Custom Fallback</h2>
 				<ErrorBoundary
-					fallback={({ error, reset }) => (
+					fallback={({ error }) => (
 						<div className="rounded-lg bg-orange-100 p-4 dark:bg-orange-900">
 							<h3 className="font-medium">Custom Error View</h3>
 							<p className="mt-2 text-sm text-muted-foreground">

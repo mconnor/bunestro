@@ -4,12 +4,12 @@ interface Props {
 }
 
 const { error } = Astro.props;
-import Layout from "@/layouts/Layout.astro";
+import Layout from "#layouts/Layout";
 
 // icons
 import { ArrowLeft } from "lucide-react";
 // components
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button";
 
 // Safely handle the error message
 const errorMessage =

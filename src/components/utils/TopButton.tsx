@@ -2,13 +2,13 @@
 // a btn to take user to the top of the page
 import { useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "#lib/utils";
 import {
 	Tooltip,
 	TooltipContent,
 	TooltipProvider,
 	TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "#ui/tooltip";
 
 export function ScrollToTopButton({
 	className,

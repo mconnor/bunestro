@@ -1,11 +1,11 @@
 ---
-import type { MetadataProps } from "@/types";
+import type { MetadataProps } from "#types/index.ts";
 interface Props extends MetadataProps {}
 import {
 	siteData,
 	twitterMetaData as twMetaData,
 	icons,
-} from "@/lib/data/siteData";
+} from "#lib/data/siteData";
 const {
 	url = Astro.url,
 	title,

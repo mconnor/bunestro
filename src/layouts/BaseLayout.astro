@@ -1,16 +1,16 @@
 ---
-import "@/styles/globals.css";
-import "@/styles/customGlobals.css";
+import "../styles/globals.css";
+import "../styles/customGlobals.css";
 // custom fonts https://docs.astro.build/en/guides/fonts/
 import "@fontsource-variable/montserrat";
 
 // https://docs.astro.build/en/guides/view-transitions/#trigger-navigation
 import { ClientRouter } from "astro:transitions";
 
-import Metadata from "@/components/utils/Metadata.astro";
-import PageLoader from "@/components/utils/PageLoader.astro";
+import Metadata from "#utils/Metadata.astro";
+// import PageLoader from "#utils/PageLoader.astro";
 
-import type { MetadataProps } from "@/types";
+import type { MetadataProps } from "#types/index.ts";
 interface Props extends MetadataProps {
 	pageLoader?: boolean;
 }
@@ -60,7 +60,7 @@ interface Props extends MetadataProps {
 				);
 			});
 		</script>
-		<script src="@/lib/getSavedTheme">
+		<script src="#lib/getSavedTheme">
 			getSavedTheme();
 		</script>
 		<Metadata {...Astro.props} />
